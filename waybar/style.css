@@ -1,0 +1,406 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 13px;
+}
+
+window#waybar {
+/*Aca Configure El fondo para sea totalmente transparente*/
+    background-color: rgba(43, 48, 59, 0);
+    
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+#workspaces {
+    background-color: @background; /* Color de fondo */
+    border-radius: 15px;       /* Bordes redondeados */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid @color1;
+    margin-left: 5px;
+}
+/* Contenedor del grupo de música */
+#group-music {
+    background-color: @background; /* Fondo oscuro semitransparente */
+    border-radius: 15px;
+    padding: 0 10px;
+    border: 1px solid @color8; /* Borde con color de Pywal */
+}
+
+/* Las barras de Cava (siempre visibles) */
+#custom-cava {
+    background-color: @background;
+    border-radius: 15px;       /* Bordes redondeados */
+    margin-top: 10px;
+    padding-right:10px;
+    padding-left:10px;
+    margin-bottom: 10px;
+    border: 1px solid @color1;
+    color: @color4; /* Color principal de tu wallpaper */
+    font-size: 16px;
+}
+
+#can {
+    background-color: @background; /* Color de fondo */
+    border-radius: 15px;       /* Bordes redondeados */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid @color1;
+    margin-right: 5px;
+}
+#can > widget > * {
+    padding-right:10px;
+    padding-left:10px;
+    padding-top: 5px;
+    background-color : transparent;
+    border-radius: 15px;
+    padding-bottom: 5px;
+}
+
+/* El texto de la canción (el que aparece al hacer clic) */
+#mpris {
+    background-color: @background;
+    border-radius: 15px;       /* Bordes redondeados */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid @color1;
+    color: @foreground;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+
+#workspaces button.active {
+    color: @color4;
+    text-shadow: 0 0 8px @color4;
+}
+
+#workspaces button.urgent {
+    color: @color1;
+}
+
+#workspaces button:hover {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+
+#utils {
+    background-color: @background; /* Color de fondo */
+    border-radius: 15px;       /* Bordes redondeados */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px	solid @color1;
+}
+/* Estilo individual dentro del grupo si lo necesitas */
+#utils > widget > * {
+    padding-right:10px;
+    padding-left:10px;
+    padding-top: 5px;
+    background-color : transparent;
+    border-radius: 15px;
+    padding-bottom: 5px;
+}
+
+#utils > widget > #network, #pulseaudio, #battery {
+    border-right: 1px solid @color1;
+}
+
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.modules-right > widget > * {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 5px; /* Ajusta el aire interno a tu gusto */
+}
+
+#custom-notification {
+ transition: .5s;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover,#network:hover,#battery:hover,#power-profiles-daemon:hover,#custom-notification:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transition: .5s;
+}
+
+
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding-right:10px;
+    padding-left:10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    background-color: @background;
+    border: 1px solid @color1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#window {
+    margin: 0 4px;
+}
+
+
+#clock {
+   color: @foreground;
+}
+
+#battery {
+    color: @color2;
+    transition: .5s;
+}
+
+#network {
+    color: @color4;
+    transition: .5s
+}
+
+#pulseaudio {
+    color: @color6;
+    transition: .5s
+}
+
+#battery.charging, #battery.plugged {
+    color: @foreground;
+    background-color: @background;
+    transition: .5s;
+}
+
+@keyframes blink {
+    to {
+        background-color: @background;
+        color: @foreground;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+    transition: .5s
+}
+
+#power-profiles-daemon.performance {
+    color: @color1;
+}
+
+#power-profiles-daemon.balanced {
+    color: @color4;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @color2;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+#memory {
+    background-color: @background;
+}
+
+#disk {
+    background-color: @background;
+}
+
+#backlight {
+    background-color: @background;
+}
+
+#network {
+    background-color: @background;
+}
+
+#network.disconnected {
+    color: red;
+}
+
+
+#pulseaudio.muted {
+    color: @color6;
+}
+
+#wireplumber {
+    background-color: @background;
+    color: @foreground;
+}
+
+#wireplumber.muted {
+    background-color: @background;
+}
+
+#custom-media {
+    background-color: @background;
+    color: @foreground;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: @background;
+}
+
+#custom-media.custom-vlc {
+    background-color: @background;
+}
+
+#temperature {
+    background-color: @background;
+}
+
+#temperature.critical {
+    background-color: @background;
+}
+
+#tray {
+    background-color: @background;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: @background;
+}
+
+#idle_inhibitor.activated {
+    background-color: @background;
+    color: @foreground;
+}
+
+#mpd {
+    background-color: @background;
+    color: @foreground;
+}
+
+#mpd.disconnected {
+    background-color: @background;
+}
+
+#mpd.stopped {
+    background-color: @background;
+}
+
+#mpd.paused {
+    background-color: @background;
+}
+
+#language {
+    background: @background;
+    color: @foreground;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: @background;
+    color: @foreground;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: @background;
+}
+
+#privacy-item.audio-in {
+    background-color: @background;
+}
+
+#privacy-item.audio-out {
+    background-color: @background;
+}

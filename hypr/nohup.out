@@ -1,0 +1,11 @@
+[2026-03-26 22:05:58.207] [info] Using configuration file /home/fpapeschi/.config/waybar/config.jsonc
+[2026-03-26 22:05:58.213] [info] Discovered appearance 'dark'
+[2026-03-26 22:05:58.250] [info] Using CSS file /home/fpapeschi/.config/waybar/style.css
+[2026-03-26 22:05:58.261] [info] Hyprland IPC starting
+[2026-03-26 22:05:58.262] [info] Loading persistent workspaces from Waybar config
+[2026-03-26 22:05:58.262] [info] Loading persistent workspaces from Hyprland workspace rules
+[2026-03-26 22:05:58.344] [info] Bar configured (width: 1366, height: 50) for output: eDP-1
+[2026-03-26 22:05:58.344] [error] Item '': No icon name or pixmap given.
+sed: couldn't flush stdout: Tubería rota
+Audio thread exited unexpectedly. input/pulse.c: pa_simple_read() failed: Connection terminated
+

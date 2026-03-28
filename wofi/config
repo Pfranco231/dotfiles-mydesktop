@@ -1,0 +1,17 @@
+mode=drun
+width=550
+height=400
+location=center
+always_parse_args=true
+show_all=true
+print_command=true
+layer=top
+prompt=
+filter_rate=100
+no_actions=true
+halign=fill
+insensitive=true
+hide_scroll=true
+allow_images=true
+image_size=24
+term=kitty

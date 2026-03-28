@@ -1,0 +1,58 @@
+@import "/home/fpapeschi/.cache/wal/colors-waybar.css";
+
+window {
+    margin: 0px;
+    background-color: alpha(@background, 0.8);
+    border-radius: 30px;
+    font-family: "JetBrains Mono", "Roboto", sans-serif;
+    font-size: 14px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid @color4;
+}
+
+#outer-box {
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: @foreground;
+    background-color: @color8;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #d8dee9;
+}
+
+#entry:selected {
+    background-color: @color4;
+    border-radius: 5px;
+    outline: none;
+}
+
+#text:selected {
+    color: #ffffff;
+}
+
+#img {
+    margin-right: 10px;
+}
