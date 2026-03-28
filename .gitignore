@@ -1,13 +1,12 @@
 
 *
-*/
 
 !.gitignore
 
 !cava/
 !hypr/
 !pulse/
-!swaync
+!swaync/
 !wal/
 !waybar/
 !wlogout/
