@@ -1,0 +1,15 @@
+
+*
+*/
+
+!.gitignore
+
+!cava/
+!hypr/
+!pulse/
+!swaync
+!wal/
+!waybar/
+!wlogout/
+!wofi/
+
